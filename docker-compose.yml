@@ -20,6 +20,7 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend:/frontend
+    command: bash -c "npm start"
 
 
 volumes:
