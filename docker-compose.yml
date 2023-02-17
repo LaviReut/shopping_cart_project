@@ -24,10 +24,10 @@ services:
   web:
     build: ./frontend
     ports:
-      - "3000:3000"
-    volumes:
-      - ./frontend:/frontend
-    command: bash -c "npm install; npm start"
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - api
 
 
 volumes:
