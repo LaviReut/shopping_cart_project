@@ -53,7 +53,7 @@ class Navbar extends React.Component {
         return (
             <Menu id='navbar' className={this.state.className} size='massive' fixed='top' secondary>
                 <Menu.Item id='logo' as={Link} to='/' header>
-                    Logo
+                    Reut's Bakery
                 </Menu.Item>
 
                 <Menu.Menu position='right'>
