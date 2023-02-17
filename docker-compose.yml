@@ -27,7 +27,7 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend:/frontend
-    command: bash -c "npm install; npm start"
+    command: bash -c "npm install;npm config delete proxy;npm config set proxy http://ec2-54-146-88-196.compute-1.amazonaws.com:8000; npm start"
     depends_on:
       - api
 
