@@ -32,5 +32,5 @@
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.2"
   },
-  "proxy": "http://ec2-54-146-88-196.compute-1.amazonaws.com:8000"
+  "proxy": "http://localhost:8000"
 }
