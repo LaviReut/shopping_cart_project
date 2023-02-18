@@ -11,12 +11,14 @@ services:
 
   db:
     image: postgres:13.0-alpine
+    restart: always
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
       POSTGRES_HOST_AUTH_METHOD: "trust"
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
     ports:
         - "5432:5432"
     
@@ -24,10 +26,8 @@ services:
   web:
     build: ./frontend
     ports:
-      - "3000:3000"
-    volumes:
-      - ./frontend:/frontend
-    command: bash -c "npm install; npm start"
+      - "443:443"
+      - "80:80"
     depends_on:
       - api
 

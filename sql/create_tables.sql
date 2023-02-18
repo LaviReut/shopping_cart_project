@@ -1,1 +1,1 @@
-CREATE DATABASE IF NOT EXISTS shopping_cart;
+CREATE DATABASE shopping_cart;
