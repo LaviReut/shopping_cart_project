@@ -27,6 +27,16 @@ export const removeFromCart = (id) => {
     }
 }
 
+export const addremoveFromCart = (id, actiontype) => {
+    return {
+        type: REMOVE_FROM_CART,
+        payload: {
+            id: id,
+            actiontype: actiontype
+        }
+    }
+}
+
 export const clearCart = () => {
     return {
         type: CLEAR_CART

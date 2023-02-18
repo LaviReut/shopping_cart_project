@@ -9,7 +9,7 @@ import Cart from '../components/Cart'
 import Shipping from '../components/Shipping'
 import Billing from '../components/Billing'
 import Confirmation from '../components/Confirmation'
-import { removeFromCart, clearCart, placeOrder } from '../actions/Cart'
+import { addremoveFromCart, removeFromCart, clearCart, placeOrder } from '../actions/Cart'
 import { setShippingOptions } from '../actions/Shipping'
 import { setBillingOptions } from '../actions/Billing'
 import { TOASTR_OPTIONS } from '../constants/Common'
@@ -26,6 +26,8 @@ class CartPage extends React.Component {
         this.previousStep = this.previousStep.bind(this)
         this.submit = this.submit.bind(this)
         this.handleRemoveItem = this.handleRemoveItem.bind(this)
+        this.handleAddItem = this.handleAddItem.bind(this)
+        this.handleCleanItem = this.handleCleanItem.bind(this)
         this.showStep = this.showStep.bind(this)
     }
 
@@ -49,7 +51,17 @@ class CartPage extends React.Component {
 
     handleRemoveItem(e, item) {
         e.stopPropagation()
-        this.props.removeFromCart(item.id)
+        this.props.addremoveFromCart(item.id, 'remove')
+    }
+
+    handleAddItem(e, item) {
+        e.stopPropagation()
+        this.props.addremoveFromCart(item.id, 'add')
+    }
+
+    handleCleanItem(e, item) {
+        e.stopPropagation()
+        this.props.addremoveFromCart(item.id, 'clean')
     }
 
     showStep() {
@@ -59,6 +71,8 @@ class CartPage extends React.Component {
                             cart={this.props.cart}
                             nextStep={this.nextStep}
                             handleRemoveItem={this.handleRemoveItem}
+                            handleAddItem={this.handleAddItem}
+                            handleCleanItem={this.handleCleanItem}
                             clearCart={this.props.clearCart}
                         />
 
@@ -138,6 +152,7 @@ CartPage.propTypes = {
     cart: PropTypes.array.isRequired,
     shipping: PropTypes.object.isRequired,
     removeFromCart: PropTypes.func.isRequired,
+    removeFromCart: PropTypes.func.isRequired,
     setShippingOptions: PropTypes.func.isRequired,
     setBillingOptions: PropTypes.func.isRequired,
     clearCart: PropTypes.func.isRequired,
@@ -156,4 +171,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default withRouter(connect(mapStateToProps, { removeFromCart, setShippingOptions, setBillingOptions, clearCart, placeOrder })(CartPage))
+export default withRouter(connect(mapStateToProps, { addremoveFromCart, removeFromCart, setShippingOptions, setBillingOptions, clearCart, placeOrder })(CartPage))

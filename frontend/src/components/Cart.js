@@ -16,7 +16,9 @@ const Cart = (props) => {
                 <Table.Cell>{element.product.price}</Table.Cell>
                 <Table.Cell>{(element.product.price * element.quantity).toFixed(2)}</Table.Cell>
                 <Table.Cell>
-                    <Button circular icon='trash' onClick={(e) => props.handleRemoveItem(e, element)} />
+                    <Button circular icon='minus' onClick={(e) => props.handleRemoveItem(e, element)} />
+                    <Button circular icon='trash' onClick={(e) => props.handleCleanItem(e, element)} />
+                    <Button circular icon='plus' onClick={(e) => props.handleAddItem(e, element)} />
                 </Table.Cell>
             </Table.Row>
         )
@@ -80,7 +82,8 @@ const Cart = (props) => {
 
 Cart.propTypes = {
     cart: PropTypes.array.isRequired,
-    handleRemoveItem: PropTypes.func.isRequired
+    handleRemoveItem: PropTypes.func.isRequired,
+    handleAddItem: PropTypes.func.isRequired
 }
 
 

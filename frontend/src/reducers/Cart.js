@@ -15,7 +15,6 @@ const cart = (state=[], action={}) => {
 
                 return newState
             }
-
             return [
                 ...state,
                 {
@@ -28,10 +27,29 @@ const cart = (state=[], action={}) => {
         case REMOVE_FROM_CART:
             let idx = _.findIndex(state, { id: action.payload.id })
             if (idx >= 0) {
-                return [
-                    ...state.slice(0, idx),
-                    ...state.slice(idx + 1)
-                ]
+                let newState = state.slice()
+                if (action.payload.actiontype == 'clean'){
+                    return [
+                        ...state.slice(0,idx),
+                        ...state.slice(idx + 1)
+                    ]     
+                }
+                if (action.payload.actiontype == 'remove' && newState[idx].quantity == 1){
+                    return [
+                        ...state.slice(0,idx),
+                        ...state.slice(idx + 1)
+                    ]    
+                }
+                if (action.payload.actiontype == 'remove'){
+                    newState[idx].quantity -= 1
+                } else {
+                    newState[idx].quantity += 1
+                }
+                return newState
+                // return [
+                //     ...state.slice(0,idx),
+                //     ...state.slice(idx + 1)
+                // ]
             }
 
             return state
