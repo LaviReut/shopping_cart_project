@@ -18,7 +18,8 @@ class Account extends React.Component {
                 username: '',
                 email: '',
                 password: '',
-                confirmPassword: ''
+                confirmPassword: '',
+                imagePath: ''
             },
             newProduct: {
                 category: '',
