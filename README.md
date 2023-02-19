@@ -45,3 +45,8 @@ To view logs from each container run:
 * [axios](https://github.com/mzabriskie/axios) - A Promised based HTTP client
 * [toastr](https://github.com/CodeSeven/toastr) - Simple javascript toast notifications
 
+## Deployed With
+* [Dcoker](https://www.docker.com/) - Container service
+* [Docker-compose](https://docs.docker.com/compose/) - A tool to manage multi-container application deployment 
+* [Postgresql](https://www.postgresql.org/) - SQL Database
+* [Nginx](https://www.nginx.com/) - Web Server 
