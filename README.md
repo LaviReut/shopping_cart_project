@@ -23,14 +23,14 @@ Check deployment status:
 
     docker ps
 
-    Suppose to be 3 running containers:
-     -web
-     -postgres
-     -api
+Suppose to be 3 running containers:
+     * web
+     * postgres
+     * api
     
-    To view logs from each container run:
+To view logs from each container run:
 
-        docker logs <container_id>
+    docker logs <container_id>
 
 
 
