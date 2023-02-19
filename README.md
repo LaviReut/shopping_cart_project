@@ -25,7 +25,7 @@ Check deployment status:
 
 Suppose to be 3 running containers:
 * web
-* postgres
+* db
 * api
     
 To view logs from each container run:
