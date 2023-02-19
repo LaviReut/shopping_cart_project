@@ -24,9 +24,9 @@ Check deployment status:
     docker ps
 
 Suppose to be 3 running containers:
-     * web
-     * postgres
-     * api
+* web
+* postgres
+* api
     
 To view logs from each container run:
 
