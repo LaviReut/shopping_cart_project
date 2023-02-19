@@ -1,104 +1,40 @@
 # Shopping-cart
-A simple Shopping-cart built with React and Django REST Framework(DRF).
+A basic Shopping-cart built with React and Django REST Framework(DRF) and deployed on docker(Django Image + Postgresql Image + Nginx Image) using docker-compose.
 
 ## Dependencies
-* Python3+
-* Node
-* PostgreSQL
+* Docker
+* Docker-compose
 
-## Getting Started
-### Installation
+
+## High Level Design
+
+
+## Deployment
 Clone this repository:
 
     git clone https://github.com/damnee562/shopping-cart.git
 
-Create virtualenv and install all requirements in **backend** directory:
 
-    cd shopping-cart/backend/
-    python3 -m venv venv_name
-    source venv_name/bin/activate
-    pip install -r requirements.txt
+Run Docker-compose Deployment:
 
-Install all needed node_modules in **frontend** directory:
+    docker-compose up -d --build
 
-    cd shopping-cart/frontend/
-    yarn install
+Check deployment status:
 
-or with npm:
+    docker ps
 
-    npm install
+    Suppose to be 3 running containers:
+     -web
+     -postgres
+     -api
+    
+    To view logs from each container run:
 
-Prepare database in postgreSQL:
+        docker logs <container_id>
 
-    sudo -u postgres psql
-    CREATE DATABASE shopping_cart; # Don't forget the semicolon in the end
 
-    # Quit postgresql shell
-    \q
 
-Set up database connection in **shopping-cart/backend/backend/settings.py** in DATABASES section:
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'shopping_cart',
-            'USER': 'YOUR_USERNAME', # replace with your own username
-            'PASSWORD': 'YOUR_PASSWORD', # replace with your own password
-            'HOST': 'localhost',
-            'PORT': ''
-        }
-    }
-
-Fire up **backend** server:
-
-    cd shopping-cart/backend/
-    python manage.py migrate
-    python manage.py runserver
-
-Open another terminal for **frontend** server:
-
-    cd shopping-cart/frontend/
-    yarn start
-
-or with npm:
-
-    npm start
-
-### Screenshots
-#### Shopping page
-![alt text](https://imgur.com/3jbeIvA.png "Shopping page")
-
-#### Filter products
-![alt text](https://imgur.com/QWcVVOo.png "Filter product")
-
-#### Add product into cart
-![alt text](https://imgur.com/iHzLPWF.png "Product details")
-
-![alt text](https://imgur.com/eLJKntt.png "Add product into cart")
-
-#### Cart page
-![alt text](https://imgur.com/TwbT2So.png "Cart page")
-
-![alt text](https://imgur.com/6UNwzmT.png "Shipping options")
-
-![alt text](https://imgur.com/aBbqQok.png "Billing options")
-
-![alt text](https://imgur.com/vMcWXbZ.png "Confirm order")
-
-#### Account page
-![alt text](https://imgur.com/iXTg2Wv.png "Account page")
-
-#### Check orders and Manage products
-![alt text](https://imgur.com/5nIUe94.png "Check orders")
-
-![alt text](https://imgur.com/VQOiYHs.png "Manage products")
-
-#### Add new product
-![alt text](https://imgur.com/t3raRHl.png "Add new product")
-
-![alt text](https://imgur.com/mdZECZF.png "Add new product")
-
-![alt text](https://imgur.com/lg6Jx2M.png "New product")
+## Screenshots
 
 ## Built With
 * [React](https://facebook.github.io/react/) - A JavaScript library for building UI
@@ -109,5 +45,3 @@ or with npm:
 * [axios](https://github.com/mzabriskie/axios) - A Promised based HTTP client
 * [toastr](https://github.com/CodeSeven/toastr) - Simple javascript toast notifications
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
