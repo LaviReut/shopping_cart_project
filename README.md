@@ -8,7 +8,7 @@ A basic Shopping-cart built with React and Django REST Framework(DRF) and deploy
 
 ## High Level Design
 
-![Alt text](relative%20ReadmeImages/HLD.png?raw=true "HLD")
+![Alt text](ReadmeImages/HLD.png?raw=true "HLD")
 
 ## Unit Tests
 
