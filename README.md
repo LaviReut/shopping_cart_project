@@ -9,11 +9,22 @@ A basic Shopping-cart built with React and Django REST Framework(DRF) and deploy
 ## High Level Design
 
 
+## Unit Tests
+
+Run unit tests:
+
+Run Unit Tests on local host:
+
+    cd backend
+    python -m venv venv
+    venv/Scripts/Activate.ps1
+    pip install -r requirements
+    python manage.py test
+
 ## Deployment
 Clone this repository:
 
     git clone https://github.com/damnee562/shopping-cart.git
-
 
 Run Docker-compose Deployment:
 
