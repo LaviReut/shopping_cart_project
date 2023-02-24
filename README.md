@@ -43,9 +43,6 @@ To view logs from each container run:
     docker logs <container_id>
 
 
-
-## Screenshots
-
 ## Built With
 * [React](https://facebook.github.io/react/) - A JavaScript library for building UI
 * [Semantic UI React](https://react.semantic-ui.com/introduction) - A React UI framework
