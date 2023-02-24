@@ -1,12 +1,15 @@
+# Get BaseImage as Python on Debian Linux OS
 FROM  python:3.9-buster
 
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /backend
 
-# copy from the current directory of the Dockerfile to /api in the image
+# copy from the current directory of the Dockerfile to /backend in the image
 COPY . . 
 
+# Install requirements
 RUN pip install -r requirements.txt
 
+# Expose the application port to the host
 EXPOSE 8000

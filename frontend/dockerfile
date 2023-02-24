@@ -1,18 +1,25 @@
+# Get BaseImage of node on Ubuntu Linux OS
 FROM node:14.15.0 as build
 
+# Set Working Dir
 WORKDIR /frontend
 
+# Copy all code in frontend dir to the container's working dir
 COPY . .
 
+# Install and Build the react app
 RUN npm install
 
 RUN npm run build
 
-# production environment
+# Pass the build result to NGINX WebServer Image based on Alpine Linux OS
 FROM nginx:1.19.10-alpine
 COPY --from=build /frontend/build /usr/share/nginx/html
 
+# Copy the configuration file of the NGINX from the host to the docker file system(Located in forntend/nginx dir)
 COPY --from=build /frontend/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 80 & 443 to Host - In order to serve HTTP & HTTPS requests from the client
 EXPOSE 80
 EXPOSE 443
 CMD ["nginx", "-g", "daemon off;"]
