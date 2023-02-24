@@ -6,8 +6,8 @@ class TestCalls(TestCase):
     #     self.assertRedirects(response, '/login/')
     #     response = self.client.post('/api/products', follow=True)
     #     self.assertRedirects(response, '/login/')
-    fixtures = ['products.json']
-    fixtures = ['users.json']
+    fixtures = ['fixtures/products.json']
+    fixtures = ['fixtures/users.json']
     def test_call_products_endpoint(self):
         response = self.client.get('/api/products/')
         self.assertEqual(response.status_code, 200)
