@@ -12,8 +12,6 @@ A basic Shopping-cart built with React and Django REST Framework(DRF) and deploy
 
 ## Unit Tests
 
-Run unit tests:
-
 Run Unit Tests on local host:
 
     cd backend
