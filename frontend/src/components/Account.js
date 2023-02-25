@@ -106,10 +106,12 @@ class Account extends React.Component {
         this.setState({ newProduct, modalOpen: false })
     }
 
-    handleNewProductOnChange(e) {
+    handleNewProductOnChange(e, data) {
         let newProduct = _.assign({}, this.state.newProduct)
-
-        newProduct[e.target.name] = e.target.value
+        console.log(data.value)
+        console.log(data.name)
+        console.log(e.target)
+        newProduct[data.name] = data.value
         this.setState({ newProduct })
     }
 
@@ -218,7 +220,11 @@ class Account extends React.Component {
                 content='Add new product'
                 onClick={this.handleModalOpen}
             />
-
+        const categoryOptions = [
+            { key: 'Cakes', value: 'Cakes', text: 'Cakes' },
+            { key: 'Cookies', value: 'Cookies', text: 'Cookies' },
+            { key: 'Breads', value: 'Breads', text: 'Breads' },
+            ]
         const isLoggedIn =
             <div>
                 <Message info>
@@ -238,14 +244,22 @@ class Account extends React.Component {
                         <Modal.Header>Add new prodcut</Modal.Header>
                         <Modal.Content>
                             <Form>
-                                <Form.Input
+                                {/* <Form.Input
                                     name='category'
                                     value={this.state.newProduct.category}
                                     label='Category'
                                     placeholder='Category'
                                     onChange={this.handleNewProductOnChange}
+                                /> */}
+                                <Form.Select
+                                    fluid
+                                    name='category'
+                                    label='Category'
+                                    placeholder='Category'
+                                    options={categoryOptions}
+                                    onChange={this.handleNewProductOnChange}                                    required={true}
+                                    value={this.state.newProduct.category}
                                 />
-
                                 <Form.Input
                                     name='name'
                                     value={this.state.newProduct.name}

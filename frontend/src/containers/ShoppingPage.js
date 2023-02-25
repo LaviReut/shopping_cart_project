@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-
+import { Dropdown } from 'semantic-ui-react'
 import ProductList from '../components/ProductList'
 import { fetchProducts } from '../actions/Products'
 import { addToCart } from '../actions/Cart'
