@@ -1,11 +1,6 @@
 from django.test import TestCase
 
 class TestCalls(TestCase):
-    # def test_call_view_deny_anonymous(self):
-    #     response = self.client.get('/api/products', follow=True)
-    #     self.assertRedirects(response, '/login/')
-    #     response = self.client.post('/api/products', follow=True)
-    #     self.assertRedirects(response, '/login/')
     fixtures = ['fixtures/products.json']
     fixtures = ['fixtures/users.json']
     def test_call_products_endpoint(self):
