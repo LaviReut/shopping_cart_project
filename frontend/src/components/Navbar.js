@@ -35,7 +35,7 @@ class Navbar extends React.Component {
     handleOnScroll(e) {
         let className = ''
         if (e.pageY > 0) {
-            className = 'small'
+            className = 'Stackable Grid'
         }
 
         this.setState({ className })
