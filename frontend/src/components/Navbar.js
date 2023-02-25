@@ -93,9 +93,6 @@ class Navbar extends React.Component {
                 <Menu.Item id='logo' as={Link} to='/' header>
                     <img src={logo} as={Link} to='/' header/>
                 </Menu.Item>
-                <Menu.Item id='logoText' as={Link} to='/' header>
-                    KKCake
-                </Menu.Item>
                 <Menu.Item id='category'>
                     <Dropdown
                         placeholder='Select Category'
