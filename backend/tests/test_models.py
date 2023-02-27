@@ -5,6 +5,7 @@ from cart.models import Orders, Products
 class YourTestClass(TestCase):
     fixtures = ['fixtures/products.json']
     fixtures = ['fixtures/users.json']
+    
     def add_user(self):
         self.assertFalse(False)
 

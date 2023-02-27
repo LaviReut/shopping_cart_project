@@ -8,7 +8,7 @@ class TestCalls(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_call_orders_endpoint(self):
-        response = self.client.get('/api/products/')
+        response = self.client.get('/api/orders/')
         self.assertEqual(response.status_code, 200)
 
     def test_call_login_endpoint(self):
