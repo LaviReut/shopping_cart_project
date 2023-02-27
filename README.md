@@ -7,7 +7,7 @@ A basic Shopping-cart built with React and Django REST Framework(DRF) and deploy
 
 ## Link to live app:
 
-    This Deployment made on aws EC2 using the docker-compose as describe in the next bullets of this README file, and consist the sample data from the backend django fixtures.
+    This Deployment made on aws EC2 using the docker-compose as describe in the next bullets of this<br>README file, and consist the sample data from the backend django fixtures.
 
     Credentials:
     User: 'admin'
