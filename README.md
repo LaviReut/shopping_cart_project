@@ -11,7 +11,7 @@ A basic Shopping-cart built with React and Django REST Framework(DRF) and deploy
     README file, and consist the sample data from the backend django fixtures.
 
     The DNS of the host: http://ec2-54-146-88-196.compute-1.amazonaws.com/account
-    
+
     Credentials:
     User: 'admin'
     Password: '123'
@@ -35,7 +35,8 @@ Run Unit Tests on local host:
 ## Deployment
 Clone this repository:
 
-    git clone https://github.com/damnee562/shopping-cart.git
+    git clone https://github.com/LaviReut/shopping_cart_project.git
+    git checkout dev_env_docker
 
 Run Docker-compose Deployment:
 
