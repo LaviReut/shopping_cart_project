@@ -13,7 +13,7 @@ A basic Shopping-cart built with React and Django REST Framework(DRF) and deploy
     User: 'admin'
     Password: '123'
 
-    [My-APP](http://ec2-54-146-88-196.compute-1.amazonaws.com/account)
+[My-APP](http://ec2-54-146-88-196.compute-1.amazonaws.com/account)
 
 ## High Level Design
 
